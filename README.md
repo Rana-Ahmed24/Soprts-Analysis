@@ -40,7 +40,7 @@ Middle line: Divides the court into two halves.
 
 Net: Positioned at the center of the court.
 
-Court corners: Representing the boundaries of the playing area.
+#### Court corners: Representing the boundaries of the playing area.
 ---
 
 ### Notes
