@@ -1,107 +1,54 @@
+# Padel Tennis Tracker
 
-# Padel Tennis Tracker 🎾  
-A video analysis tool for tracking players, the ball, and scoring in Padel Tennis matches. This project leverages **YOLO (You Only Look Once)** models to detect and track objects in real-time.
+## Introduction
 
-![Uploading image.png…]()
-
-## Features
-- **Player Tracking**: Identifies players on the court and tracks their movements.
-- **Ball Tracking**: Detects the ball, interpolates missing positions, and identifies hits.
-- **Scoring System**: Automatically updates the scoreboard based on ball movements across the court.
-- **Visualization**: Overlays bounding boxes, player IDs, and a live scoreboard on the video.
-- **Mini Court**: Displays a scaled-down version of the court for better visualization.
-
----
-
-## Project Structure
-```plaintext
-.
-├── models/                 # YOLO models for ball and player detection
-├── input_videos/           # Input video files
-├── output_videos/          # Processed output videos
-├── stubs/                  # Stub files for caching detections
-├── utils.py                # Helper functions
-├── trackers/               # Tracking modules for players and the ball
-│   ├── player_tracker.py   # Tracks players across frames
-│   └── ball_tracker.py     # Tracks the ball across frames
-├── court_line_detector.py  # Detects court lines and keypoints
-├── mini_court.py           # Visualizes the mini court
-├── constants.py            # Shared constants
-├── main.py                 # Main script
-└── README.md               # Project documentation
-```
-
----
+The Padel Tennis Tracker is a system designed to track players and ball movements in a padel game using computer vision techniques. The tracker uses machine learning models for detecting and tracking the ball and players, and outputs annotated video frames for visualization.
 
 ## Installation
+
+To use the Padel Tennis Tracker, follow these steps:
+
 1. Clone this repository:
    ```bash
-   git clone https://github.com/yourusername/padel-tennis-tracker.git
+   git clone https://github.com/your-repo/padel-tennis-tracker.git
    cd padel-tennis-tracker
    ```
+
 2. Install dependencies:
    ```bash
    pip install -r requirements.txt
    ```
-3. Download pre-trained YOLO models and place them in the `models/` directory.
-
----
 
 ## Usage
-1. Place your input videos in the `input_videos/` folder.
-2. Run the main script:
-   ```bash
-   python main.py
-   ```
-3. Use the Gradio interface to upload a video or select from the `input_videos/` folder.
-4. The output video with tracking and scoring will be saved in the `output_videos/` folder.
+
+### Ball Tracker
+
+The Ball Tracker class is responsible for detecting the ball and interpolating its position when it's not detected. It also identifies frames where the ball is shot based on changes in its vertical position.
+
+### Player Tracker
+
+The Player Tracker class tracks the movement of players on the court. It uses a YOLO-based model to detect players in each frame of the video. The system then filters and selects the players based on their proximity to specific court keypoints.
+
+## Visualization
+
+### 1. **Padel Tracker Visualization Example**
+
+Here is an example of the output produced by the system. The input frame shows a snapshot from the video, with players and the ball being detected and tracked by the system. The bounding boxes are drawn around the detected players and ball.
+
+![Padel Tracker Visualization](https://github.com/your-repo/padel-tennis-tracker/blob/main/images/padel_tracker_example.png)
 
 ---
 
-## Visual Workflow
+### Notes
 
-### 1. Input Video
-A raw video of a Padel Tennis match is loaded.
-
-![Input Video Example](https://via.placeholder.com/600x300?text=Input+Video)  
+- The system relies on the YOLO model for object detection and tracking.
+- Ball position interpolation is performed using pandas, ensuring smooth movement even when the ball is temporarily out of frame.
 
 ---
 
-### 2. Detection and Tracking
-- Players are identified and assigned unique IDs.
-- The ball's trajectory is tracked and interpolated for missing frames.
+Make sure to replace the image URL (`https://github.com/your-repo/padel-tennis-tracker/blob/main/images/padel_tracker_example.png`) with the actual path to the image you want to include in your repository.
 
-![Detection Process](https://via.placeholder.com/600x300?text=Player+and+Ball+Detection)
-
----
-
-### 3. Scoreboard Overlay
-The live scoreboard is updated based on ball movements and displayed on the video.
-
-![Scoreboard Overlay](https://via.placeholder.com/600x300?text=Scoreboard+Overlay)
-
----
-
-### 4. Mini Court Visualization
-A scaled-down version of the court visualizes player and ball positions.
-
-![Mini Court](https://via.placeholder.com/600x300?text=Mini+Court+Visualization)
-
----
-
-### 5. Output Video
-The final video contains:
-- Bounding boxes for players and the ball.
-- Updated scoreboard.
-- Mini court overlay.
-
-![Output Video Example](https://via.placeholder.com/600x300?text=Output+Video)
-
----
-
-## Customization
-- Update `constants.py` to adjust scoring rules or court dimensions.
-- Replace YOLO models in the `models/` folder for improved detection accuracy.
+Let me know if you need further adjustments!
 
 ---
 
