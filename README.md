@@ -46,13 +46,3 @@ Here is an example of the output produced by the system. The input frame shows a
 
 ---
 
-Make sure to replace the image URL (`https://github.com/your-repo/padel-tennis-tracker/blob/main/images/padel_tracker_example.png`) with the actual path to the image you want to include in your repository.
-
-Let me know if you need further adjustments!
-
----
-
-## License
-This project is licensed under the MIT License.
-
----
