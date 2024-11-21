@@ -30,14 +30,14 @@ The Ball Tracker class is responsible for detecting the ball and interpolating i
 
 The Player Tracker class tracks the movement of players on the court. It uses a YOLO-based model to detect players in each frame of the video. The system then filters and selects the players based on their proximity to specific court keypoints.
 
-## Visualization
+Mini Court Tracker
+The Mini Court Tracker provides a visual representation of a scaled-down version of the Padel court within the video frame. This helps in tracking and analyzing player movement relative to key court features like the service lines, middle line, and net. The mini-court is drawn using pixel-based coordinates that are scaled from real-world dimensions.
 
-### 1. **Padel Tracker Visualization Example**
-
-Here is an example of the output produced by the system. The input frame shows a snapshot from the video, with players and the ball being detected and tracked by the system. The bounding boxes are drawn around the detected players and ball.
-
-![Padel Tracker Visualization](https://github.com/your-repo/padel-tennis-tracker/blob/main/images/padel_tracker_example.png)
-
+Key Features of the Mini Court
+Service lines: Marking the service areas on both sides of the court.
+Middle line: Divides the court into two halves.
+Net: Positioned at the center of the court.
+Court corners: Representing the boundaries of the playing area.
 ---
 
 ### Notes
